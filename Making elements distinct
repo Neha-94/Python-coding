@@ -1,0 +1,16 @@
+/*Given a sorted integer array. We need to make array elements distinct by increasing values and keeping array sum minimum possible. We need to print the minimum possible sum as output.*/
+
+for t in range(0,int(input())):
+    arr_size=int(input())
+    arr=list(map(int,input().split()))
+    arr=sorted(arr)
+    res=arr[0]
+    prev=arr[0]
+    for i in range(1,arr_size):
+      if(arr[i]<=prev):
+        prev+=1
+        res+=prev
+      else:
+        res = res + arr[i] 
+        prev = arr[i] 
+    print(res)
